@@ -18,8 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //  WHO         WHAT       VALUE
         diceImageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
-        // #imageLiteral() 로 하면 강의 영상처럼 이미지를 찾아서 넣을 수 있음
         diceImageView2.image = UIImage(imageLiteralResourceName: "DiceTwo")
+        // #imageLiteral() 로 하면 강의 영상처럼 이미지를 찾아서 넣을 수 있음
         
         //challenge:
         //diceImageView1.alpha = 0.5
@@ -27,6 +27,12 @@ class ViewController: UIViewController {
         
     }
 
-
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        print("Button got tapped.")
+        
+        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceFour")
+        diceImageView2.image = UIImage(imageLiteralResourceName: "DiceSix")
+    }
+    
 }
 
