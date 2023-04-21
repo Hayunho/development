@@ -24,3 +24,10 @@ var computedNumbers = [numbers[0] * numbers[1], numbers[1] * numbers[2], numbers
 
 
 print(computedNumbers)
+
+
+let alpahbet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+let password = alpahbet.randomElement()! + alpahbet.randomElement()! + alpahbet.randomElement()!
+
+print(password)
