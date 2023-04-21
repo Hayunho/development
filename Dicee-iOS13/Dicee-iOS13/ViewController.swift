@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
     
-    var leftDiceNumber = 1
-    var rightDiceNumber = 5
+    //var: 변수       let: 상수
+    let diceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,29 +26,15 @@ class ViewController: UIViewController {
 //
 //        //challenge:
 //        //diceImageView1.alpha = 0.5
-        
-        
     }
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        print("leftDiceNumber at beginning = \(leftDiceNumber)")
-        print("rightDiceNumber at beginning = \(rightDiceNumber)")
+        //            [0, 1, 2, 3, 4, 5][몇 번째?]
+        diceImageView1.image = diceArray[Int.random(in: 0...5)]
+        diceImageView2.image = diceArray[Int.random(in: 0...5)]
         
-        //                          [0, 1, 2, 3, 4, 5][몇 번째?]
-        diceImageView1.image = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")][leftDiceNumber]
-        diceImageView2.image = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")][rightDiceNumber]
-        
-        leftDiceNumber += 1
-        rightDiceNumber -= 1
-        if (leftDiceNumber >= 6) {
-            leftDiceNumber = 0
-        }
-        if (rightDiceNumber < 0) {
-            rightDiceNumber = 5
-        }
-        
-        print("leftDiceNumber at end = \(leftDiceNumber)")
-        print("rightDiceNumber at end = \(rightDiceNumber)")
+        // diceImageView1.image = diceArray.randomElement()
+        // diceImageView2.image = diceArray.randomElement()
     }
     
 }
